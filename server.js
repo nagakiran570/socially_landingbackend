@@ -11,7 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
-
+app.get("/", (req, res) => {
+  res.send("Socially backend API is running 🚀");
+});
 // POST route to handle form submission
 app.post("/submit", async (req, res) => {
   try {
